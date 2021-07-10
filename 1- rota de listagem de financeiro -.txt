@@ -1,0 +1,7 @@
+1- rota de listagem de financeiro -
+8- preciso de dados no banco de dados para testar todas as rotas
+23- Enviar dados teste para rodar o backend em ambiente de desenvolvimento
+5- radar de clientes - aguardando
+6- chat com cliente
+7- notificação
+13- rota de serviço avaliado (preciso que o backend mande o ultimo servico avaliado, caso tenha e ele ainda não foi visto, o frontend irá chamar o backend a cada 1 minuto, preciso saber o ultimo servico avaliado e que tbm não foi visto pelo profissional) - isso vai ser realtime, não é viável ficar enviando request a cada minuto

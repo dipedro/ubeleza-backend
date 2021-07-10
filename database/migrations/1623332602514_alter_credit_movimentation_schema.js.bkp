@@ -1,0 +1,20 @@
+'use strict';
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema');
+
+class AlterCreditMovimentationSchema extends Schema {
+  up() {
+    this.table('credit_movimentations', table => {
+      table.enum('isAddition', ['0', '1']);
+    });
+  }
+
+  down() {
+    this.table('credit_movimentations', table => {
+      //Reverse alterations
+    });
+  }
+}
+
+module.exports = AlterCreditMovimentationSchema;

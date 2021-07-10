@@ -1,0 +1,26 @@
+'use strict';
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema');
+
+class AlterPartnerServicesSchema extends Schema {
+  up() {
+    this.table('partner_services', table => {
+      table.boolean('can_home').defaultTo(false);
+      table.integer('image_id').unsigned();
+      table
+        .foreign('image_id')
+        .references('id')
+        .inTable('images')
+        .onDelete('cascade');
+    });
+  }
+
+  down() {
+    this.table('partner_services', table => {
+      // reverse alternations
+    });
+  }
+}
+
+module.exports = AlterPartnerServicesSchema;

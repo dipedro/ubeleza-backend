@@ -1,0 +1,25 @@
+'use strict';
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema');
+
+class AlterRatingsSchema extends Schema {
+  up() {
+    this.table('ratings', table => {
+      table.integer('service_request_id').unsigned();
+      table
+        .foreign('service_request_id')
+        .references('id')
+        .on('service_requests')
+        .onDelete('cascade');
+    });
+  }
+
+  down() {
+    this.table('ratings', table => {
+      // reverse alternations
+    });
+  }
+}
+
+module.exports = AlterRatingsSchema;

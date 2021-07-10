@@ -1,0 +1,20 @@
+'use strict';
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema');
+
+class AlterPartnerSchema extends Schema {
+  up() {
+    this.table('partners', table => {
+      table.double('stars', 8, 2).nullable();
+    });
+  }
+
+  down() {
+    this.table('partners', table => {
+      // reverse alternations
+    });
+  }
+}
+
+module.exports = AlterPartnerSchema;

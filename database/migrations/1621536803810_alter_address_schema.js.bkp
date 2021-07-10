@@ -1,0 +1,25 @@
+'use strict';
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema');
+
+class AlterAddressSchema extends Schema {
+  up() {
+    this.table('addresses', table => {
+      table.integer('transport_method_id').unsigned().index();
+      table
+        .foreign('transport_method_id')
+        .references('id')
+        .on('transport_methods')
+        .onDelete('cascade');
+    });
+  }
+
+  down() {
+    this.table('addresses', table => {
+      // reverse alternations
+    });
+  }
+}
+
+module.exports = AlterAddressSchema;
